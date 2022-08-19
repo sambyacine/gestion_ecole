@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Sequences for  -->
+        <record id="seq_gestion_cours" model="ir.sequence">
+            <field name="name">Cours</field>
+            <field name="code">gestion.cours</field>
+            <field name="prefix">COU</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

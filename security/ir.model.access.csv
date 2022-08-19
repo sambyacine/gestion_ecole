@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_gestion_users,gestion.cours default,model_gestion_cours,,1,0,0,0
+acl_gestion_admin,gestion.cours_admin,model_gestion_cours,group_ag_managers,1,1,1,1
+acl_gestion_users,gestion.intervenant default,model_gestion_intervenant,,1,0,0,0
+acl_gestion_admin,gestion.intervenant_admin,model_gestion_intervenant,group_ag_managers,1,1,1,1
+acl_gestion_users,gestion.bureau default,model_gestion_bureau,,1,0,0,0
+acl_gestion_admin,gestion.bureau_admin,model_gestion_bureau,group_ag_managers,1,1,1,1
+acl_gestion_users,gestion.specialite default,model_gestion_specialite,,1,0,0,0
+acl_gestion_admin,gestion.specialite_admin,model_gestion_specialite,group_ag_managers,1,1,1,1

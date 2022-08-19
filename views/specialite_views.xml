@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="gestion_specialite_action" model="ir.actions.act_window">
+        <field name="name">Specialite</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gestion.specialite</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="gestion_specialite_tree" model="ir.ui.view">
+        <field name="name">gestion.specialite.tree</field>
+        <field name="model">gestion.specialite</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des specialites">
+                <field name="specialite"/>
+                <field name="domaine"/>
+            </tree>
+        </field>
+    </record>
+    <record id="gestion_specialite_search" model="ir.ui.view">
+        <field name="model">gestion.specialite</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="specialite"/>
+                <field name="domaine"/>
+            </search>
+        </field>
+    </record>
+    <record id="gestion_specialite_form" model="ir.ui.view">
+        <field name="name">gestion.specialite.form</field>
+        <field name="model">gestion.specialite</field>
+        <field name="arch" type="xml">
+            <form string="Détail specialite">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="specialite"/>
+                            <field name="domaine"/>
+                            <field name="intervenant_ids"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem
+        id="gestion_specialite_menu"
+        name="Specialite"
+        parent="menu_gestion_root"
+        action="gestion_specialite_action"
+        sequence="5"/>
+
+</odoo>

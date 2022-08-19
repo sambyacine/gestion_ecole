@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="gestion_cours_action" model="ir.actions.act_window">
+        <field name="name">Cours</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gestion.cours</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="gestion_cours_tree" model="ir.ui.view">
+        <field name="name">gestion.cours.tree</field>
+        <field name="model">gestion.cours</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des cours">
+                <field name="numero"/>
+                <field name="titre"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+    <record id="gestion_cours_search" model="ir.ui.view">
+        <field name="model">gestion.cours</field>
+            <field name="arch" type="xml">
+            <search>
+               <field name="numero"/>
+                <field name="titre"/>
+                <field name="type"/>
+            </search>
+        </field>
+    </record>
+    <record id="gestion_cours_form" model="ir.ui.view">
+        <field name="name">gestion.cours.form</field>
+        <field name="model">gestion.cours</field>
+        <field name="arch" type="xml">
+            <form string="Détail cours">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="annee"/>
+                            <field name="numero"/>
+                            <field name="titre"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                            <field name="intervenant_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem
+        name="Gestion Ecole"
+        id="menu_gestion_root"/>
+    <menuitem
+        id="gestion_cours_menu"
+        name="Cours"
+        parent="menu_gestion_root"
+        action="gestion_cours_action"
+        sequence="2"/>
+
+</odoo>

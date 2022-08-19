@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="gestion_intervenant_action" model="ir.actions.act_window">
+        <field name="name">Intervenant</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gestion.intervenant</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="gestion_intervenant_tree" model="ir.ui.view">
+        <field name="name">gestion.intervenant.tree</field>
+        <field name="model">gestion.intervenant</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des intervenants">
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="telephone1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="gestion_intervenant_search" model="ir.ui.view">
+        <field name="model">gestion.intervenant</field>
+            <field name="arch" type="xml">
+            <search>
+               <field name="nom"/>
+                <field name="prenom"/>
+                <field name="telephone1"/>
+            </search>
+        </field>
+    </record>
+    <record id="gestion_intervenant_form" model="ir.ui.view">
+        <field name="name">gestion.intervenant.form</field>
+        <field name="model">gestion.intervenant</field>
+        <field name="arch" type="xml">
+            <form string="Détail intervenant">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nom"/>
+                            <field name="prenom"/>
+                            <field name="telephone1"/>
+                            <field name="telephone2"/>
+                            <field name="telephone3"/>
+                        </group>
+                        <group>
+                            <field name="cours_ids"/>
+                            <field name="bureau_id"/>
+                            <field name="specialite_ids"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem
+        name="Gestion Ecole"
+        id="menu_gestion_root"/>
+    <menuitem
+        id="gestion_intervenant_menu"
+        name="Intervenant"
+        parent="menu_gestion_root"
+        action="gestion_intervenant_action"
+        sequence="3"/>
+
+</odoo>
